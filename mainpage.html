@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        body{
+            background: url("image/rachel-walker-fdYWSfH8N6Y-unsplash.jpg");
+            background-size: cover;
+            width: 100%;
+        }
+        h1{
+            font-size: 45px;
+            color:yellow;
+            font-family: Brush Script Std;
+            text-shadow: 3px 3px blue;
+        }
+        .box {
+            position: relative;
+            width: 180px;
+            height: 200px;;
+            transform-style: preserve-3d;
+            animation: animate 30s linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes animate {
+            0% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+        .box > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+            -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0000001a);
+        }
+        .box > span > img {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            /*object-fit: contain;*/
+        }
+        #quotes{
+            font-size: 25px;
+            font-family: "Sofia", sans-serif;
+            /*font-weight: bold;*/
+            color:yellow;
+            text-shadow: 1.5px 1.5px red;
+        }
+      
+        @media only screen and (max-width: 600px) {
+            h1{
+                font-size: 25px;
+            }
+            body{
+                background: url("image/rachel-walker-fdYWSfH8N6Y-unsplash.jpg");
+                background-size: cover;
+            }
+            .box {
+                width: 100px;
+                height: 120px;;
+            }
+            #quotes
+            {
+                font-size: 13px;
+            }
+            
+        }
+    </style>
+    <title>Happy Birthday, Samarpita &#x2764; !</title>
+  </head>
+  <body>
+    <script>
+        function fn(){
+            alert("😊 Play the audio 😊");
+        }
+        fn();
+    </script>
+    <bgsound src="./music/1.mp3">
+      
+    <div class="text-center p-5 d-flex justify-content-center">
+        <h1><span style="text-shadow: 1px 1px white,-1px -1px white;">💕</span> A small gift just for you <span style="text-shadow: 1px 1px white,-1px -1px white;">💕</span></h1>
+    </div>
+
+    <div class="text-center p-3 d-flex justify-content-center">
+        <audio controls loop style="width: 100px; height:30px;">
+            <source src="./music/HBD.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+    </div>
+
+
+    <div class="text-center p-5 d-flex justify-content-center" style="width:100%;">
+        <div class="box">
+            <span style="--i:1"> <img src="./image/1.jpg"> </span>
+            <span style="--i:2"> <img src="./image/2.jpg"> </span>
+            <span style="--i:3"> <img src="./image/3.jpg"> </span>
+            <span style="--i:4"> <img src="./image/4.jpg"> </span>
+            <span style="--i:5"> <img src="./image/5.jpg"> </span>
+            <span style="--i:6"> <img src="./image/6.jpg"> </span>
+            <span style="--i:7"> <img src="./image/7.jpg"> </span>
+            <span style="--i:8"> <img src="./image/8.jpg"> </span>
+            <span style="--i:9"> <img src="./image/9.jpg"> </span>
+        </div>
+    </div>
+
+    <!--<div class="text-center p-1 d-flex justify-content-center">
+        
+    </div>
+-->
+    <div class="text-center p-5 d-flex justify-content-center">
+        <span id="quotes"></span>
+    </div>
+    <script>
+        var quote = [
+        "Count your life by smiles, not tears. Count your age by friends, not years. Happy birthday!",
+        "Birthdays are a new start, a fresh beginning and a time to pursue new endeavors with new goals. Move forward with confidence and courage. You are a very special person. May today and all of your days be amazing!", 
+        "Forget the past; look forward to the future, for the best things are yet to come.", 
+        "Your birthday is the first day of another 365-day journey. Be the shining thread in the beautiful tapestry of the world to make this year the best ever. Enjoy the ride.", 
+        "Another adventure filled year awaits you. Welcome it by celebrating your birthday with pomp and splendor. Wishing you a very happy and fun-filled birthday!"         
+        ]; 
+        var i=0;
+        document.getElementById("quotes").innerHTML=quote[i];
+        i=1;
+        function printCountries() {
+            if(i<5)
+            {
+                document.getElementById("quotes").innerHTML=quote[i];
+                i++;
+            }
+        } 
+        setInterval(printCountries, 3000);
+    </script>   
+  </body>
+</html>
